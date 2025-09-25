@@ -139,13 +139,49 @@
     }
   }
 
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .home-hero .home-content h1 {
+      font-size: 3rem;
+    }
+    .work-samples h2 {
+      font-size: 2rem;
+    }
+  }
+
+  /* Mobile */
   @media (max-width: 768px) {
+    .home-hero .home-content h1 {
+      font-size: 2rem;
+    }
+    .home-hero .home-content .highlight {
+      font-size: 1rem;
+    }
+    .home-hero .home-content .services {
+      font-size: 0.9rem;
+    }
+
     .work-samples .gallery {
       grid-template-columns: 1fr;
     }
     .work-samples .gallery .sample-box img,
     .work-samples .gallery .sample-box video {
       height: 180px;
+    }
+
+    .modal .modal-content {
+      width: 95%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .work-samples h2 {
+      font-size: 1.5rem;
+    }
+    .work-samples .gallery .sample-box img,
+    .work-samples .gallery .sample-box video {
+      height: 140px;
     }
   }
 }
