@@ -1,0 +1,98 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1px 20px; // equal gaps left & right
+  display: flex;
+  justify-content: space-between; // logo left, links right
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); // translucent navbar
+  backdrop-filter: blur(10px); // futuristic glass effect
+  z-index: 1000;
+
+  .logo {
+    display: flex; /* arrange logo + text side by side */
+    align-items: center; /* vertically center them */
+    gap: 10px; /* spacing between image and text */
+
+    font-family: "Alkatra";
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff5a5f, #ffbb33, #33ddff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    // &:hover {
+    // transform: scale(1.1) rotate(-2deg);
+    // }
+
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain; /* keeps proportions */
+      margin-top: 0; /* remove inline margin */
+      background: transparent;
+      filter: invert(100%);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+
+    a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ffbb33;
+      }
+
+      // Futuristic underline effect
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(45deg, #ff5a5f, #33ddff);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 30px;
+
+    .nav-links {
+      gap: 20px;
+
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.nav-links a.active {
+  color: #ffbb33; // or any color to indicate active
+}
+
+.nav-links a.active::after {
+  width: 100%; // underline effect stays on active link
+}
